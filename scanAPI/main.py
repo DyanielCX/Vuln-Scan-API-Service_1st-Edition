@@ -13,6 +13,7 @@ from route_api_scan import Scan
 # Initialize REST API
 api = Api(app)
 
+# Create database if not exist
 with app.app_context():
     db.create_all()
 
@@ -21,7 +22,7 @@ container_name = "osmedeus-scanner"
 command = f"docker start {container_name}"
 subprocess.Popen(command, shell=True)
 
-# Create api/users Resource Endpoint
+# Create Endpoint
 api.add_resource(Scan, '/api/scan/')
 # api.add_resource(User, '/api/user/<int:id>')
 

@@ -1,7 +1,9 @@
 from flask_restful import fields, reqparse
 
-## Scanning Endpoint
-## Route: '/api/scan/' 
+'''
+Scanning Endpoint
+Route: '/api/scan/' 
+'''
 # Define Scanning Args
 scan_agrs = reqparse.RequestParser()
 scan_agrs.add_argument('type', type=str, required=True, help="Type cannot be blank")
