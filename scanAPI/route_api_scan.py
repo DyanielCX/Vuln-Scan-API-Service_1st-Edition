@@ -17,7 +17,7 @@ class Scan(Resource):
     def post(self):
         container_name = "osmedeus-scanner"
         VALID_SCAN_MODES = [
-            "domains", "vuln", "fast", "domain", "vuln-and-dirb", "general"
+            "domains", "vuln", "fast", "domain", "vuln-and-dirb", "general", "extensive"
         ]
 
         # Parse request data
