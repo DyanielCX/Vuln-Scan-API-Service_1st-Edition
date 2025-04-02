@@ -1,0 +1,12 @@
+info - caa-fingerprint - webapp8.wimify.xyz - 
+info - http-missing-security-headers - https://webapp8.wimify.xyz - 
+info - openssh-detect - webapp8.wimify.xyz:22 - 
+info - robots-txt-endpoint - https://webapp8.wimify.xyz/robots.txt - 
+info - ssl-dns-names - webapp8.wimify.xyz:443 - 
+info - ssl-issuer - webapp8.wimify.xyz:443 - 
+info - tech-detect - https://webapp8.wimify.xyz - 
+info - tls-version - webapp8.wimify.xyz:443 - 
+info - waf-detect - https://webapp8.wimify.xyz/ - 
+info - wildcard-tls - webapp8.wimify.xyz:443 - 
+low - expired-ssl - webapp8.wimify.xyz:443 - 
+low - revoked-ssl-certificate - webapp8.wimify.xyz:443 - 

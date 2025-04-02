@@ -1,4 +1,5 @@
 from dbModel import ScanModel, db
+from scanRslt_upd import read_fgrprint
 from docker import DockerClient
 from config import app
 
@@ -22,12 +23,18 @@ def check_exec_status():
                     # Update status based on exit code
                     if exit_code == 0:
                         scan.status = "done"
+                        
+                        # cur_scanID = scan.scan_id
+                        # read_fgrprint(cur_scanID)
+                        
                     elif exit_code == 1:
                         scan.status = "failed"
                     else:
+                        print(exit_code)
                         scan.status = "error"
                     
                     db.session.commit()
             except Exception as e:
+                print(e)
                 scan.status = "error"
                 db.session.commit()

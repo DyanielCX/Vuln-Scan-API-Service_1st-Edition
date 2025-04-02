@@ -11,16 +11,37 @@ class ScanModel(db.Model):
     status = db.Column(db.String(80), nullable=False)
     exec_id = db.Column(db.String(255), nullable=False)
 
-    db.relationship('ScanResults', backref='scan', uselist=False, lazy=True)
+    # One-to-many relationship btw tables
+    db.relationship('ScanResults', backref='scan', lazy=True)
 
     def __repr__(self):
         return f"Scan(scan_id={self.scan_id}, type={self.type}, domain={self.domain}, status={self.status}, exec_id={self.exec_id})"
     
 # Scan Result Database Model
-class ScanResults(db.Model):
+## Subdomain
+class SubdomainResult(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), unique=True, nullable=False)
-    subdomain = db.Column(JSON)
-    port_scan = db.Column(JSON)
-    tech_fgrprint = db.Column(JSON)
-    vul_scan = db.Column(JSON)
+    scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False)
+    data = db.Column(db.String(100), nullable=False)
+
+## Port Scanning
+class PortScanResult(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False)
+    data = db.Column(db.String(80), nullable=False)
+
+## Tech Finger Print
+class TechFgrPrintResult(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False)
+    url = db.Column(db.String(120), nullable=False)
+    title = db.Column(db.String(80), nullable=False)
+    tech = db.Column(db.String(100), nullable=False)
+    resp_hash = db.Column(db.String(255), nullable=False)
+
+## Vul Scan
+class VulScanResult(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False)
+    data = db.Column(JSON, nullable=False)
+

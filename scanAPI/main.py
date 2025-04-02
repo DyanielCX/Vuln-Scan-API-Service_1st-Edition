@@ -10,6 +10,8 @@ from route_api_scan import Scan
 from route_api_viewstatus import viewStatus
 # from Inhe_UserResq import User
 
+from route_api_test import Testing
+
 # Initialize REST API
 api = Api(app)
 
@@ -27,9 +29,12 @@ api.add_resource(Scan, '/api/scan/')
 api.add_resource(viewStatus, '/api/view-status/<int:scan_id>')
 # api.add_resource(User, '/api/user/<int:id>')
 
-# Update the scan status every 30 seconds
+# Testing route
+api.add_resource(Testing, '/api/test')
+
+# Update the scan status every 2 minutes
 scheduler = BackgroundScheduler()
-scheduler.add_job(check_exec_status, 'interval', seconds=30)
+scheduler.add_job(check_exec_status, 'interval', minutes=2)
 scheduler.start()
 
 # Prepare Route

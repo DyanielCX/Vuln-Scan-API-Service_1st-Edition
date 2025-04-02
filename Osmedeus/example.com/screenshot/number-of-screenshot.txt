@@ -1,0 +1,2 @@
+example.com-screenshots
+number-of-screenshot.txt
