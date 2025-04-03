@@ -1,10 +1,13 @@
 from dbModel import TechFgrPrintResult, db
 from config import app
 
-def read_fgrprint(scan_id):
+scanResult_dir = "C:/Users/dyani/Desktop/Intern/API_Practice/Osmedeus/"
+
+
+def read_fgrprint(scan_id,domain_name):
     with app.app_context():
         # Result directory
-        result_dir = f"C:/Users/dyani/Desktop/Intern/API_Practice/Osmedeus/webapp8.wimify.xyz/fingerprint/webapp8.wimify.xyz-raw-overview.txt"
+        result_dir = scanResult_dir + f"{domain_name}/fingerprint/{domain_name}-raw-overview.txt"
         
         try:
             with open(result_dir, 'r') as f:
@@ -28,8 +31,8 @@ def read_fgrprint(scan_id):
 
             # Commit changes
             db.session.commit()
-            print(f"Successfully updated {f.tell()} bytes of fingerprint data")
+            print(f"\033[92mScanID {scan_id}: Tech Fingerprint result update successfully to database\033[0m")
             
         except Exception as e:
             db.session.rollback()
-            print(f"Error updating database: {str(e)}")
+            print(f"\033[91mError updating database: {str(e)}\033[0m")

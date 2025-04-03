@@ -28,3 +28,39 @@ ViewStatResp = {
     'domain':fields.String, 
     'status':fields.String
 }
+
+
+"""
+View Report Endpoint
+- Route: '/api/view-report/<int:scan_id>' 
+"""
+# Tech Fingerprint Response Format
+TechFgrPrintResp = {
+    'id': fields.Integer,
+    'url': fields.String,
+    'scan_id': fields.Integer,
+    'title': fields.String,
+    'tech': fields.String,
+    'resp_hash': fields.String
+}
+
+# Subdomain Response Format
+SubdomainResp = {
+    'id': fields.Integer,
+    'scan_id': fields.Integer,
+    'data': fields.String
+}
+
+# Port Scan Response Format
+PortScanResp = {
+    'id': fields.Integer,
+    'scan_id': fields.Integer,
+    'data': fields.String
+}
+
+# Combined Report Response Format
+ReportResp = {
+    'Tech-Fingerprint': fields.List(fields.Nested(TechFgrPrintResp))
+    # 'Subdomains': fields.List(fields.Nested(SubdomainResp)),
+    # 'Port-Scans': fields.List(fields.Nested(PortScanResp))
+}

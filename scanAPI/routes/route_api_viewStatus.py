@@ -5,7 +5,7 @@ from RespFmt import ViewStatResp
 
 """
 View Status Endpoint
-- Purpose: View status for selected scanning
+- Purpose: View status for the selected scanning
 - Route: '/api/view-status/<int:scan_id>' 
 - Methods: GET
 """

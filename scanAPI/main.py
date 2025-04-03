@@ -5,12 +5,13 @@ from apscheduler.schedulers.background import BackgroundScheduler
 '''Local file import'''
 from dbModel import db
 from config import app
-from scanStat_upt import check_exec_status
-from route_api_scan import Scan
-from route_api_viewstatus import viewStatus
+from autoUdp.scanStat_upt import check_exec_status
+from routes.route_api_scan import Scan
+from routes.route_api_viewStatus import viewStatus
+from routes.route_api_viewReport import viewReport
 # from Inhe_UserResq import User
 
-from route_api_test import Testing
+from routes.route_api_test import Testing
 
 # Initialize REST API
 api = Api(app)
@@ -27,7 +28,7 @@ subprocess.Popen(command, shell=True)
 # Create Endpoint
 api.add_resource(Scan, '/api/scan/')
 api.add_resource(viewStatus, '/api/view-status/<int:scan_id>')
-# api.add_resource(User, '/api/user/<int:id>')
+api.add_resource(viewReport, '/api/view-report/<int:scan_id>')
 
 # Testing route
 api.add_resource(Testing, '/api/test')
