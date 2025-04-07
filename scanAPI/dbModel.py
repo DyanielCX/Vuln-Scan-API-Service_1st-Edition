@@ -22,13 +22,14 @@ class ScanModel(db.Model):
 class SubdomainResult(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False, index=True)
-    data = db.Column(db.String(100), nullable=False)
+    domain_url = db.Column(db.String(100), nullable=False)
 
 ## Port Scanning
 class PortScanResult(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False, index=True)
-    data = db.Column(db.String(80), nullable=False)
+    ip_addr = db.Column(db.String(80), nullable=False)
+    opened_port = db.Column(db.String(80), nullable=False)
 
 ## Tech Finger Print
 class TechFgrPrintResult(db.Model):
@@ -43,5 +44,5 @@ class TechFgrPrintResult(db.Model):
 class VulScanResult(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     scan_id = db.Column(db.Integer, db.ForeignKey('scan_model.scan_id'), nullable=False, index=True)
-    data = db.Column(JSON, nullable=False)
+    result = db.Column(JSON, nullable=False)
 

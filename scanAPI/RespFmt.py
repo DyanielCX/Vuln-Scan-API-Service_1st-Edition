@@ -1,4 +1,5 @@
 from flask_restful import fields, reqparse
+from sqlalchemy.dialects.sqlite import JSON
 
 '''
 Scanning Endpoint
@@ -34,33 +35,42 @@ ViewStatResp = {
 View Report Endpoint
 - Route: '/api/view-report/<int:scan_id>' 
 """
-# Tech Fingerprint Response Format
-TechFgrPrintResp = {
-    'id': fields.Integer,
-    'url': fields.String,
-    'scan_id': fields.Integer,
-    'title': fields.String,
-    'tech': fields.String,
-    'resp_hash': fields.String
-}
-
 # Subdomain Response Format
 SubdomainResp = {
     'id': fields.Integer,
     'scan_id': fields.Integer,
-    'data': fields.String
+    'domain_url': fields.String
 }
 
 # Port Scan Response Format
 PortScanResp = {
     'id': fields.Integer,
     'scan_id': fields.Integer,
-    'data': fields.String
+    'ip_addr': fields.String,
+    'opened_port': fields.String
+}
+
+# Tech Fingerprint Response Format
+TechFgrPrintResp = {
+    'id': fields.Integer,
+    'scan_id': fields.Integer,
+    'url': fields.String,
+    'title': fields.String,
+    'tech': fields.String,
+    'resp_hash': fields.String
+}
+
+# Vulnerability Scanning Response Format
+VulScanResp = {
+    'id': fields.Integer,
+    'scan_id': fields.Integer,
+    'result': fields.Raw
 }
 
 # Combined Report Response Format
 ReportResp = {
-    'Tech-Fingerprint': fields.List(fields.Nested(TechFgrPrintResp))
-    # 'Subdomains': fields.List(fields.Nested(SubdomainResp)),
-    # 'Port-Scans': fields.List(fields.Nested(PortScanResp))
+    'Subdomains': fields.List(fields.Nested(SubdomainResp)),
+    'Port-Scans': fields.List(fields.Nested(PortScanResp)),
+    'Tech-Fingerprint': fields.List(fields.Nested(TechFgrPrintResp)),
+    'Vul-Scans': fields.List(fields.Nested(VulScanResp))
 }

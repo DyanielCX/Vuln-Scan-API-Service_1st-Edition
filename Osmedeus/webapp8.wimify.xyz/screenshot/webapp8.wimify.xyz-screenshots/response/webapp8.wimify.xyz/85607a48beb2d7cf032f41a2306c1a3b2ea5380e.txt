@@ -1,6 +1,6 @@
 GET / HTTP/1.1
 Host: webapp8.wimify.xyz
-User-Agent: Mozilla/5.0 (SS; Linux x86_64; rv:126.0) Gecko/20100101 Firefox/126.0
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/116.0
 Accept-Charset: utf-8
 Accept-Encoding: gzip
 
@@ -8,7 +8,7 @@ HTTP/1.1 200 OK
 Connection: close
 Transfer-Encoding: chunked
 Content-Type: text/html
-Date: Wed, 02 Apr 2025 07:20:15 GMT
+Date: Fri, 04 Apr 2025 09:18:07 GMT
 Etag: W/"65af34aa-418"
 Last-Modified: Tue, 23 Jan 2024 03:38:18 GMT
 Server: nginx
