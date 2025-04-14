@@ -1,1 +1,0 @@
-URL, Status, Length, Words, Redirect Location

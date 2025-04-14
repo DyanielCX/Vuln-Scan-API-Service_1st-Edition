@@ -1,4 +1,0 @@
- https://www.example.com (200 OK)
-/root/workspaces-osmedeus/example.com/screenshot/example.com-screenshots/response/www.example.com/d572c48fa75f7b0397a891b7ea1a8090ec515e0d.txt https://www.example.com (200 OK)
- https://example.com (200 OK)
-/root/workspaces-osmedeus/example.com/screenshot/example.com-screenshots/response/example.com/cea8d4cbc5e3b39fcbcf053e0e0244fe14c835ae.txt https://example.com (200 OK)

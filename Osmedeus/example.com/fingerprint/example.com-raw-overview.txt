@@ -1,5 +1,0 @@
-URL, Title, Tech, Response Hash
-http://www.example.com,Example Domain,No-Tech,3bc15c8aae3e4124dd409035f32ea2fd6835efc9
-https://www.example.com,Example Domain,HTTP/3,3bc15c8aae3e4124dd409035f32ea2fd6835efc9
-http://example.com,Example Domain,No-Tech,3bc15c8aae3e4124dd409035f32ea2fd6835efc9
-https://example.com,Example Domain,HTTP/3,3bc15c8aae3e4124dd409035f32ea2fd6835efc9

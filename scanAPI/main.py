@@ -9,7 +9,6 @@ from autoUdp.scanStat_upt import check_exec_status
 from routes.route_api_scan import Scan
 from routes.route_api_viewStatus import viewStatus
 from routes.route_api_viewReport import viewReport
-# from Inhe_UserResq import User
 
 from routes.route_api_test import Testing
 

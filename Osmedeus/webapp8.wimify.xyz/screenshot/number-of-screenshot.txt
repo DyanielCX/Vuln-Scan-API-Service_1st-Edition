@@ -1,2 +1,0 @@
-number-of-screenshot.txt
-webapp8.wimify.xyz-screenshots

@@ -1,8 +1,0 @@
-
-example.com. A 23.192.228.80
-example.com. A 23.192.228.84
-example.com. A 23.215.0.136
-example.com. A 23.215.0.138
-example.com. A 96.7.128.175
-example.com. A 96.7.128.198
-www.example.com. CNAME store-492037361.amazonwebstore.com.

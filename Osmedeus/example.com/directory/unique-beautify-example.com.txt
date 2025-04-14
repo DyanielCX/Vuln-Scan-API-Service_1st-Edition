@@ -1,2 +1,0 @@
-https://example.com/%2e%2e//google.com | 403 | 0    | 1   | 1  |  
-https://example.com/index.html         | 200 | 1256 | 298 | 47 |  

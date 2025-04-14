@@ -1,5 +1,0 @@
-number-of-screenshot.txt
-open-ports.txt
-raw-open-ports.txt
-webapp8.wimify.xyz-http.txt
-webapp8.wimify.xyz-screenshots

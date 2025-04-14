@@ -1,2 +1,0 @@
-URL, Title, Tech, Response Hash
-http://webapp8.wimify.xyz,HealthCare AKSHAY,Nginx;;React,3bc15c8aae3e4124dd409035f32ea2fd6835efc9

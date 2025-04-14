@@ -6,7 +6,6 @@ db = SQLAlchemy()
 # Scan Info Database Model
 class ScanModel(db.Model):
     scan_id = db.Column(db.Integer, primary_key=True)
-    type = db.Column(db.String(80), nullable=False)
     domain = db.Column(db.String(80), nullable=False)
     status = db.Column(db.String(80), nullable=False)
     exec_id = db.Column(db.String(255), nullable=False)

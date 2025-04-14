@@ -1,5 +1,0 @@
-example.com-http.txt
-example.com-screenshots
-number-of-screenshot.txt
-open-ports.txt
-raw-open-ports.txt
