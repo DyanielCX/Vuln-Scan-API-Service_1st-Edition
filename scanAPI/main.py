@@ -40,7 +40,7 @@ scheduler.start()
 # Prepare Route
 @app.route('/')
 def index():
-    return '<h1>Vunlerability Scan API Service</h1>'
+    return '<h1>Domain Vulnerability Scanning API Service</h1>'
 
 if __name__ == '__main__':
     app.run(debug=True)
