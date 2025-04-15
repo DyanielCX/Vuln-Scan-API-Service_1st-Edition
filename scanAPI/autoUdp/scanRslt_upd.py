@@ -2,7 +2,7 @@ from dbModel import TechFgrPrintResult, SubdomainResult, PortScanResult, VulScan
 from config import app
 import json
 
-## Scanning Result Directory (Change to the directory of the repo Osmedeus folder)
+## Scanning Result Directory (Change to the Osmedues-result-local-directory)
 scanResult_dir = "C:/Users/dyani/Desktop/Intern/API_Practice/Osmedeus/"
 
 
